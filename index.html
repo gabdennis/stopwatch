@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="stopwatch.css">
+    <title>Stopwatch</title>
+    
+</head>
+
+<body>
+    <div class="description">
+        <h1>A Simple Stopwatch<span class="blink-cursor">|</span></h1>
+        <p>This simple project is a web-based stopwatch app that allows users to start, stop, reset a timer.
+        It was built using HTML, CSS and JavaScript. The HTML provides the structure of the stopwatch, 
+        including buttons for controlling the timer. </p>
+
+        <p>The CSS is used to style the stopwatch, making it visually appealing with a gradient background 
+        and styled buttons. </p>
+        <p>The JavaScript handles the functionality of the stopwatch, updating the 
+        timer display every second and managing the start, stop, and reset actions.</p>
+        <p>
+        This project is a great example of how to create an interactive 
+        web application using basic web technologies.</p>
+        </div>
+
+    <div class="stopwatch">
+        <h1 id="displayTime">00:00:00</h1>
+        <div class="controls">
+            <button class="start" onclick="watchStart()">Start</button>
+            <button class="stop" onclick="watchStop()">Stop</button>
+            <button class="reset" onclick="watchReset()">Reset</button>
+    </div>
+
+    <script>
+        let [seconds, minutes, hours] = [0, 0, 0];
+        let displayTime = document.getElementById('displayTime');
+        let timer = null;
+    
+    function stopWatch() {
+        seconds++;
+        if (seconds == 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes == 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+
+        let h = hours < 10 ? "0" + hours : hours;
+        let m = minutes < 10 ? "0" + minutes : minutes;
+        let s = seconds < 10 ? "0" + seconds : seconds;
+
+        displayTime.innerHTML = h + ":" + m + ":" + s;
+        let timer = null;
+    }
+    
+        function watchStart() {
+        if (timer !== null) {
+            clearInterval(timer);
+        }
+        timer = setInterval(stopWatch, 1000);
+    }
+
+    function watchStop() {
+        clearInterval(timer);
+    }
+
+    function watchReset() {
+        clearInterval(timer);
+        [seconds, minutes, hours] = [0, 0, 0];
+        displayTime.innerHTML = "00:00:00";
+    }
+
+    
+    </script>
+</body>
+<footer>
+    <p>Created by: <a href="https://github.com/gabdennis">Gabbie Dennis</a></p>
+</footer>
+</html>

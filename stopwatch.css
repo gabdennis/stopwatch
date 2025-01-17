@@ -1,0 +1,76 @@
+body{
+    background-color: black;
+    font-family: 'Courier', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 200px;
+}
+
+
+.stopwatch{
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    padding: 40px 30px;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+    border-radius: 10px;
+    margin: 150px auto 0;
+    background-image: linear-gradient(120deg, rgb(251, 0, 255) 0%, rgb(255, 0, 157) 100%);
+    display: inline-block;
+}
+.stopwatch h1{
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 70px;
+}
+.controls button {
+    font-size: 20px; 
+    padding: 10px 10px; 
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+.controls button:hover{
+    background-color: black;
+    color: white;
+}
+footer{
+    text-align: center;
+    margin-block-end: auto;
+    color: white;
+    text-decoration: aqua;
+}
+footer a{
+    color: aqua;
+    text-decoration: underline;
+}
+footer:hover{
+    color: aqua
+}
+.description{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 100px;
+    color: white;
+    padding-left: 100px;
+    padding-right: 200px;
+}
+.blink-cursor {
+    font-weight: 100;
+    font-size: 1em;
+    color: white;
+    animation: blink 2s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
